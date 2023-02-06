@@ -72,17 +72,25 @@ export default function Home(props : HomeProps) {
             {
               storeNames.map((n : string) => {
                 const storeItems = allStoreItems[n]
+
                 return <TabPanel key={n}>
                   <Grid gap={2} autoFlow="row dense">
-                    {n} Grid
+                    {
+                      storeItems.map(( item ) => {
+                        return <div>
+                          <Image
+                            key={item.name}
+                            src={ `/items/${item.name}.png` }
+                            alt="13"
+                            width={40}
+                            height={31}
+                            priority
+                          />
+                          {item.name}
+                        </div>
+                      })
+                    }
 
-                    <Image
-                      src="/thirteen.svg"
-                      alt="13"
-                      width={40}
-                      height={31}
-                      priority
-                    />
                   </Grid>
                 </TabPanel>;
               })
