@@ -1,0 +1,11 @@
+{
+  "name": "Shovel",
+  "duration": 30,
+  "price": 150,
+  "cost": 55,
+  "requiredItemCounts": {
+    "Metal": 1,
+    "Wood": 1,
+    "Plastic": 1
+  }
+}

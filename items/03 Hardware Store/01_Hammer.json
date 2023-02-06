@@ -1,0 +1,10 @@
+{
+  "name": "Hammer",
+  "duration": 14,
+  "price": 90,
+  "cost": 30,
+  "requiredItemCounts": {
+    "Metal": 1,
+    "Wood": 1
+  }
+}

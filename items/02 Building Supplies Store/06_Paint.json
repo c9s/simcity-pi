@@ -1,0 +1,11 @@
+{
+  "name": "Paint",
+  "duration": 60,
+  "price": 320,
+  "cost": 180,
+  "requiredItemCounts": {
+    "Metal": 2,
+    "Minerals": 1,
+    "Chemicals": 2
+  }
+}

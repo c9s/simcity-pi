@@ -3,7 +3,17 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
+import {load} from '@/src/loader'
+
 const inter = Inter({ subsets: ['latin'] })
+
+export async function getStaticProps() {
+  // const files = fs.readdirSync(path.join('posts'))
+  const itemMap = load()
+  return {
+    props: { itemMap }, // will be passed to the page component as props
+  }
+}
 
 export default function Home() {
   return (

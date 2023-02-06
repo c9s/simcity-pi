@@ -1,0 +1,9 @@
+{
+  "name": "Nails",
+  "duration": 5,
+  "price": 80,
+  "cost": 20,
+  "requiredItemCounts": {
+    "Metal": 2
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Cooking Utensils",
+  "duration": 45,
+  "price": 250,
+  "cost": 110,
+  "requiredItemCounts": {
+    "Metal": 2,
+    "Wood": 2,
+    "Plastic": 2,
+  }
+}

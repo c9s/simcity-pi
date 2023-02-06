@@ -1,0 +1,10 @@
+{
+  "name": "Ladder",
+  "duration": 60,
+  "price": 420,
+  "cost": 180,
+  "requiredItemCounts": {
+    "Planks": 2,
+    "Metal": 2
+  }
+}

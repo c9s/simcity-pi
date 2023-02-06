@@ -1,0 +1,9 @@
+{
+  "name": "Planks",
+  "duration": 30,
+  "price": 120,
+  "cost": 40,
+  "requiredItemCounts": {
+    "Wood": 2
+  }
+}

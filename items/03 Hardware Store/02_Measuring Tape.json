@@ -1,0 +1,10 @@
+{
+  "name": "Measuring Tape",
+  "duration": 20,
+  "price": 110,
+  "cost": 35,
+  "requiredItemCounts": {
+    "Metal": 1,
+    "Plastic": 1
+  }
+}

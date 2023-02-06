@@ -1,0 +1,9 @@
+{
+  "name": "Bricks",
+  "duration": 20,
+  "price": 190,
+  "cost": 80,
+  "requiredItemCounts": {
+    "Minerals": 2
+  }
+}

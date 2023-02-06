@@ -1,0 +1,10 @@
+{
+  "name": "Glue",
+  "duration": 60,
+  "price": 440,
+  "cost": 145,
+  "requiredItemCounts": {
+    "Plastic": 1,
+    "Chemicals": 2
+  }
+}

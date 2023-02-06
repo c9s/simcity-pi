@@ -1,0 +1,10 @@
+{
+  "name": "Cement",
+  "duration": 50,
+  "price": 440,
+  "cost": 140,
+  "requiredItemCounts": {
+    "Minerals": 2,
+    "Chemicals": 1
+  }
+}

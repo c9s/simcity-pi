@@ -1,0 +1,11 @@
+{
+  "name": "Drill",
+  "duration": 120,
+  "price": 590,
+  "cost": 230,
+  "requiredItemCounts": {
+    "Electrical Components": 1,
+    "Plastic": 2,
+    "Metal": 2
+  }
+}
