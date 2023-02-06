@@ -13,9 +13,13 @@ export function load() : Array<Item> {
   storeNames.forEach((storeName : string) => {
     const itemFiles = fs.readdirSync(path.join('items', storeName))
     const itemConfigs = itemFiles.map((filename) => {
-      const itemJson = fs.readFileSync(path.join('items', filename), 'utf-8')
+      const itemJsonPath = path.join('items', storeName, filename)
+
+      console.log(itemJsonPath)
+
+      const itemJson = fs.readFileSync(itemJsonPath, 'utf-8')
       const item = JSON.parse(itemJson) as Item;
-      item.store = storeName;
+      item.store = storeName.replace( /^\d+\s+/ , '');
       return item
     })
 
@@ -32,8 +36,8 @@ export function load() : Array<Item> {
 
     item.requiredItems = {};
 
-    if (item.requiredItems) {
-      for (let requiredName in item.requiredItems) {
+    if (item.requiredItemCounts) {
+      for (let requiredName in item.requiredItemCounts) {
         // set item object only when it is found
         if (items[requiredName]) {
           item.requiredItems[requiredName] = items[requiredName]

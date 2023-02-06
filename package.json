@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
     "@chakra-ui/react": "^2.4.9",
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@next/font": "13.1.6",

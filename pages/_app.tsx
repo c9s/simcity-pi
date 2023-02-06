@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 */
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
