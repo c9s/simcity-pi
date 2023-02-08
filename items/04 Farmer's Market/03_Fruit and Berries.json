@@ -1,0 +1,10 @@
+{
+  "name": "Fruit and Berries",
+  "duration": 90,
+  "price": 730,
+  "cost": 325,
+  "requiredItemCounts": {
+    "Seeds": 2,
+    "Tree Saplings": 1
+  }
+}

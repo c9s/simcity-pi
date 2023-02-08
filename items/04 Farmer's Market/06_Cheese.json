@@ -1,0 +1,9 @@
+{
+  "name": "Cheese",
+  "duration": 105,
+  "price": 660,
+  "cost": 280,
+  "requiredItemCounts": {
+    "Animal Feed": 2
+  }
+}

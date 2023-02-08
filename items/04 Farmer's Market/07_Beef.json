@@ -1,0 +1,9 @@
+{
+  "name": "Beef",
+  "duration": 150,
+  "price": 860,
+  "cost": 420,
+  "requiredItemCounts": {
+    "Animal Feed": 3
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Grass",
+  "duration": 30,
+  "price": 310,
+  "cost": 125,
+  "requiredItemCounts": {
+    "Seeds": 1,
+    "Shovel": 1
+  }
+}

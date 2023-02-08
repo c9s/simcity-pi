@@ -1,0 +1,9 @@
+{
+  "name": "Vegetables",
+  "duration": 20,
+  "price": 160,
+  "cost": 60,
+  "requiredItemCounts": {
+    "Seeds": 2
+  }
+}

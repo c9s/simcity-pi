@@ -1,0 +1,10 @@
+{
+  "name": "Flour Bag",
+  "duration": 30,
+  "price": 570,
+  "cost": 240,
+  "requiredItemCounts": {
+    "Seeds": 2,
+    "Textiles": 2
+  }
+}
