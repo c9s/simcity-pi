@@ -2,8 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import type { NextPage, GetStaticProps } from "next"
 
-import { Box, Grid } from "@chakra-ui/react"
+import React, { useState } from 'react';
+import { Box, Grid, GridItem } from "@chakra-ui/react"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+import NeededMats from "@/src/components/NeededMats";
 
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
@@ -42,9 +45,21 @@ function categorizeItemsByStore(items : Array<Item>) {
   return storeItems;
 }
 
+function itemsMap(items : Array<Item>) : { [name : string] : Item} {
+  const itemsMap : { [name : string] : Item} = {};
+  items.map((item) => {
+    itemsMap[item.name] = item
+  })
+  return itemsMap
+}
+
 export default function Home(props : HomeProps) {
   const items = props.items;
   const allStoreItems = categorizeItemsByStore(items);
+
+  const allItems = itemsMap(items)
+
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   console.log(allStoreItems);
 
@@ -74,22 +89,35 @@ export default function Home(props : HomeProps) {
                 const storeItems = allStoreItems[n]
 
                 return <TabPanel key={n}>
-                  <Grid gap={2} autoFlow="row dense">
-                    {
-                      storeItems.map(( item ) => {
-                        return <div>
-                          <Image
-                            key={item.name}
-                            src={ `/items/${item.name}.png` }
-                            alt="13"
-                            width={40}
-                            height={31}
-                            priority
-                          />
-                          {item.name}
-                        </div>
-                      })
-                    }
+                  <Grid templateColumns='repeat(12, 1fr)' gap={2} autoFlow="row dense">
+                    <GridItem colSpan={2}>
+                      {
+                        storeItems.map(( item ) => {
+                          return <Box w={'65px'} h={'65px'} key={item.name} textAlign={"center"} onClick={() => {
+                            setSelectedItem(item)
+                          }}>
+                            <div style={{
+                              display: "flex",
+                              justifyContent: "center",
+                            }}>
+                              <Image
+                                key={item.name}
+                                src={ `/items/${item.name}.png` }
+                                alt={item.name}
+                                width={40}
+                                height={40}
+                              />
+                            </div>
+                            <div style={{textAlign: 'center', fontSize: 13}}>
+                              {item.name}
+                            </div>
+                          </Box>
+                        })
+                      }
+                    </GridItem>
+                    <GridItem colSpan={10}>
+                      { selectedItem ? <NeededMats item={selectedItem} allItems={allItems}/> : null }
+                    </GridItem>
 
                   </Grid>
                 </TabPanel>;
