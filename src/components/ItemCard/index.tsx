@@ -38,15 +38,36 @@ export default function ItemCard(props : ItemCardProps) {
           <Heading size='xs' textTransform='uppercase'>
             Summary
           </Heading>
-          <Text pt='2' fontSize='sm'>
-            Required Item Kinds {Object.entries(item.requiredItemCounts).length}.
 
-            Duration: {moment.duration(item.duration, 'minutes').humanize()}
+          <Text pt='2' fontSize='sm'>
+            Duration: {moment.duration(item.duration, 'minutes').humanize()} (x 5 = {moment.duration(item.duration * 5, 'minutes').humanize()})
           </Text>
+
+          { item.requiredItemCounts ?
+            <Text pt='2' fontSize='sm'>Required Item Kinds {Object.entries(item.requiredItemCounts).length}.</Text> : null }
+
+
+          { item.price ? <Text pt='2' fontSize='sm'>
+            Price: $ {item.price}  (x 5 = $ { item.price * 5})
+          </Text> : null }
+
+          { item.cost ? <Text pt='2' fontSize='sm'>
+            Material Cost: $ {item.cost}  (x 5 = $ { item.cost * 5})
+          </Text> : null }
+
+          { item.price && item.cost ? <Text pt='2' fontSize='sm'>
+            Net Profit: $ {item.price - item.cost}  (x 5 = $ { (item.price - item.cost) * 5})
+
+            (if you bought materials from the trade depot)
+          </Text> : null }
         </Box>
-        <Box>
-          <NeededMats top={true} item={props.item} allItems={props.allItems}/>
-        </Box>
+
+        {
+          item.requiredItemCounts ?
+            <Box>
+              <NeededMats top={true} item={item} allItems={props.allItems}/>
+            </Box> : null
+        }
       </Stack>
     </CardBody>
   </Card>;
