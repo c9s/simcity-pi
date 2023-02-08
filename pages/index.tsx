@@ -7,6 +7,7 @@ import { Box, Grid, GridItem } from "@chakra-ui/react"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 import NeededMats from "@/src/components/NeededMats";
+import ItemCard from "@/src/components/ItemCard";
 
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
@@ -116,7 +117,7 @@ export default function Home(props : HomeProps) {
                       }
                     </GridItem>
                     <GridItem colSpan={10}>
-                      { selectedItem ? <NeededMats item={selectedItem} allItems={allItems}/> : null }
+                      { selectedItem ? <ItemCard item={selectedItem} allItems={allItems}/> : null }
                     </GridItem>
 
                   </Grid>

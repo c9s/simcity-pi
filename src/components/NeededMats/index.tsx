@@ -6,12 +6,15 @@ import { Stack, HStack, VStack } from '@chakra-ui/react';
 import Item from '@/src/types/item';
 import Image from "next/image";
 
+import MatBox from '../MatBox';
+
 interface NeededMatsProps {
+  top ?: boolean;
+
   item : Item;
 
   allItems : { [ name : string ] : Item};
 }
-
 
 function PadBox() {
   return <Box m={2} w="65px">
@@ -22,33 +25,6 @@ function PadBox() {
       <Box w={45} h={45}></Box>
     </div>
     <div style={{textAlign: 'center', fontSize: 13}}> </div>
-  </Box>
-}
-
-
-
-interface MatBoxProps {
-  item : Item;
-}
-
-function MatBox(props :MatBoxProps) {
-  const item = props.item
-  return <Box m={2} w="65px">
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-    }}>
-      <Image
-        key={item.name}
-        src={ `/items/${item.name}.png` }
-        alt={item.name}
-        width={45}
-        height={45}
-      />
-    </div>
-    <div style={{textAlign: 'center', fontSize: 13}}>
-      {item.name}
-    </div>
   </Box>
 }
 
@@ -75,8 +51,10 @@ export default function NeededMats(props : NeededMatsProps) {
 
     const isFinalDep = !depItem.requiredItemCounts
 
+    const leftMargin = props.top ? 0 : 65 + 24;
+
     if (isFinalDep) {
-      return <Box marginLeft={65+24} key={name}>
+      return <Box marginLeft={leftMargin} key={name}>
         <HStack spacing='24px'>
         {
           [...Array(count)].map((value, index) => {
@@ -87,7 +65,7 @@ export default function NeededMats(props : NeededMatsProps) {
       </Box>;
     }
 
-    return <Box marginLeft={65+24} key={name}>
+    return <Box marginLeft={leftMargin} key={name}>
       {
         [...Array(count)].map((value, index) => {
           return <NeededMats item={depItem} key={index} allItems={props.allItems}/>
@@ -97,7 +75,7 @@ export default function NeededMats(props : NeededMatsProps) {
   })
 
   return <Box>
-    <MatBox item={item}/>
+    { !props.top ?  <MatBox item={item}/> : null }
     {matsBoxes}
   </Box>;
 }
