@@ -3,6 +3,18 @@ import { Card, CardHeader, CardBody, CardFooter, Heading, Text } from '@chakra-u
 import { Box, Grid, GridItem, SimpleGrid } from '@chakra-ui/react';
 import { Stack, HStack, VStack, StackDivider } from '@chakra-ui/react';
 
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from '@chakra-ui/react'
+
 import NeededMats from "@/src/components/NeededMats";
 import MatBox from "@/src/components/MatBox";
 import Item from '@/src/types/item';
@@ -39,27 +51,65 @@ export default function ItemCard(props : ItemCardProps) {
             Summary
           </Heading>
 
-          <Text pt='2' fontSize='sm'>
-            Duration: {moment.duration(item.duration, 'minutes').humanize()} (x 5 = {moment.duration(item.duration * 5, 'minutes').humanize()})
-          </Text>
-
           { item.requiredItemCounts ?
             <Text pt='2' fontSize='sm'>Required Item Kinds {Object.entries(item.requiredItemCounts).length}.</Text> : null }
+        </Box>
+        <Box>
+          <TableContainer>
+            <Table size='sm'>
+              <Thead>
+                <Tr>
+                  <Th>Property</Th>
+                  <Th>x 1</Th>
+                  <Th>x 5</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>Duration</Td>
+                  <Td>{moment.duration(item.duration, 'minutes').humanize()}</Td>
+                  <Td>{moment.duration(item.duration * 5, 'minutes').humanize()}</Td>
+                </Tr>
 
+                { item.price ? (
+                <Tr>
+                  <Td>Price</Td>
+                  <Td>
+                    <Text pt='2' fontSize='sm'>$ {item.price}</Text>
+                  </Td>
+                  <Td>
+                    <Text pt='2' fontSize='sm'> $ { item.price * 5}</Text>
+                  </Td>
+                </Tr>
+                ) : null}
 
-          { item.price ? <Text pt='2' fontSize='sm'>
-            Price: $ {item.price}  (x 5 = $ { item.price * 5})
-          </Text> : null }
+                { item.cost ? (
+                  <Tr>
+                    <Td>Material Cost</Td>
+                    <Td>
+                      <Text pt='2' fontSize='sm'>$ {item.cost}</Text>
+                    </Td>
+                    <Td>
+                      <Text pt='2' fontSize='sm'> $ { item.cost * 5}</Text>
+                    </Td>
+                  </Tr>
+                ) : null}
 
-          { item.cost ? <Text pt='2' fontSize='sm'>
-            Material Cost: $ {item.cost}  (x 5 = $ { item.cost * 5})
-          </Text> : null }
+                { item.cost && item.price ? (
+                  <Tr>
+                    <Td>Net Profit</Td>
+                    <Td>
+                      <Text pt='2' fontSize='sm'>$ {item.price - item.cost}</Text>
+                    </Td>
+                    <Td>
+                      <Text pt='2' fontSize='sm'> $ {(item.price - item.cost) * 5}</Text>
+                    </Td>
+                  </Tr>
+                ) : null}
 
-          { item.price && item.cost ? <Text pt='2' fontSize='sm'>
-            Net Profit: $ {item.price - item.cost}  (x 5 = $ { (item.price - item.cost) * 5})
-
-            (if you bought materials from the trade depot)
-          </Text> : null }
+              </Tbody>
+            </Table>
+          </TableContainer>
         </Box>
 
         {
