@@ -1,0 +1,10 @@
+{
+  "name": "Garden Gnomes",
+  "duration": 90,
+  "price": 1600,
+  "cost": 895,
+  "requiredItemCounts": {
+    "Cement": 2,
+    "Glue": 1
+  }
+}

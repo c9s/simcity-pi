@@ -1,0 +1,11 @@
+{
+  "name": "Garden Furniture",
+  "duration": 135,
+  "price": 820,
+  "cost": 390,
+  "requiredItemCounts": {
+    "Plastic": 2,
+    "Textiles": 2,
+    "Planks": 2
+  }
+}

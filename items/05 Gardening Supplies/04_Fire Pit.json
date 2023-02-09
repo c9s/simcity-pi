@@ -1,0 +1,11 @@
+{
+  "name": "Fire Pit",
+  "duration": 240,
+  "price": 1740,
+  "cost": 915,
+  "requiredItemCounts": {
+    "Bricks": 2,
+    "Shovel": 1,
+    "Cement": 2
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Lawn Mower",
+  "duration": 120,
+  "price": 840,
+  "cost": 330,
+  "requiredItemCounts": {
+    "Metal": 2,
+    "Paint": 1,
+    "Electrical Components": 1
+  }
+}
