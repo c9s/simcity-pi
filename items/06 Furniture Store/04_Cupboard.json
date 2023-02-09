@@ -1,0 +1,11 @@
+{
+  "name": "Cupboard",
+  "duration": 45,
+  "price": 900,
+  "cost": 540,
+  "requiredItemCounts": {
+    "Glass": 2,
+    "Planks": 2,
+    "Paint": 1
+  }
+}

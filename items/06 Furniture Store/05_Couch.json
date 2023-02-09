@@ -1,0 +1,11 @@
+{
+  "name": "Couch",
+  "duration": 150,
+  "price": 1800,
+  "cost": 925,
+  "requiredItemCounts": {
+    "Textiles": 3,
+    "Glue": 1,
+    "Drill": 1
+  }
+}

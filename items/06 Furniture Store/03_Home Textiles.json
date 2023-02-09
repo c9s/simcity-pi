@@ -1,0 +1,10 @@
+{
+  "name": "Home Textiles",
+  "duration": 75,
+  "price": 610,
+  "cost": 255,
+  "requiredItemCounts": {
+    "Textiles": 2,
+    "Measuring Tape": 1
+  }
+}

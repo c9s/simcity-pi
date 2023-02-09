@@ -1,0 +1,11 @@
+{
+  "name": "Chairs",
+  "duration": 20,
+  "price": 300,
+  "cost": 180,
+  "requiredItemCounts": {
+    "Wood": 2,
+    "Nails": 1,
+    "Hammer": 1
+  }
+}
