@@ -1,0 +1,11 @@
+{
+  "name": "Coffee",
+  "duration": 60,
+  "price": 750,
+  "cost": 470,
+  "requiredItemCounts": {
+    "Sugar and Spices": 1,
+    "Seeds": 2,
+    "Cream": 1
+  }
+}

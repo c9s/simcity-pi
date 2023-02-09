@@ -1,0 +1,11 @@
+{
+  "name": "Cherry Cheesecake",
+  "duration": 90,
+  "price": 2240,
+  "cost": 1115,
+  "requiredItemCounts": {
+    "Flour Bag": 1,
+    "Cheese": 1,
+    "Fruit and Berries": 1
+  }
+}

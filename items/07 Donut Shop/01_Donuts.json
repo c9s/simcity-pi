@@ -1,0 +1,10 @@
+{
+  "name": "Donuts",
+  "duration": 45,
+  "price": 950,
+  "cost": 440,
+  "requiredItemCounts": {
+    "Sugar and Spices": 1,
+    "Flour Bag": 1
+  }
+}

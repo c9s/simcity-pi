@@ -1,0 +1,10 @@
+{
+  "name": "Green Smoothie",
+  "duration": 30,
+  "price": 1150,
+  "cost": 565,
+  "requiredItemCounts": {
+    "Vegetables": 1,
+    "Fruit and Berries": 1
+  }
+}

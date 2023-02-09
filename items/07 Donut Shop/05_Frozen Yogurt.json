@@ -1,0 +1,11 @@
+{
+  "name": "Frozen Yogurt",
+  "duration": 240,
+  "price": 1750,
+  "cost": 815,
+  "requiredItemCounts": {
+    "Sugar and Spices": 1,
+    "Fruit and Berries": 1,
+    "Cream": 1
+  }
+}

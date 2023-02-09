@@ -1,0 +1,10 @@
+{
+  "name": "Bread Roll",
+  "duration": 60,
+  "price": 1840,
+  "cost": 960,
+  "requiredItemCounts": {
+    "Flour Bag": 2,
+    "Cream": 1
+  }
+}
