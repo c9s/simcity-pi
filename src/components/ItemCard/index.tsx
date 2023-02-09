@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 
 import NeededMats from "@/src/components/NeededMats";
+import AggregatedRawMats from "@/src/components/AggregatedRawMats";
 import MatBox from "@/src/components/MatBox";
 import Item from '@/src/types/item';
 import Image from "next/image";
@@ -113,10 +114,23 @@ export default function ItemCard(props : ItemCardProps) {
         </Box>
 
         {
-          item.requiredItemCounts ?
+          item.requiredItemCounts ? (
+            <>
             <Box>
+              <Heading size='xs' textTransform='uppercase'>
+                Material Dependency
+              </Heading>
               <NeededMats top={true} item={item} allItems={props.allItems}/>
-            </Box> : null
+            </Box>
+
+            <Box>
+              <Heading size='xs' textTransform='uppercase'>
+                Aggregated Raw Materials
+              </Heading>
+              <AggregatedRawMats item={item} allItems={props.allItems}/>
+            </Box>
+            </>
+          ) : null
         }
       </Stack>
     </CardBody>
